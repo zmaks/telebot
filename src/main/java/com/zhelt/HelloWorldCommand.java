@@ -19,7 +19,9 @@ public class HelloWorldCommand extends AbstractCommand {
         try {
             TelegramRequest telegramRequest = TelegramRequestFactory.createSendMessageRequest(message.getChat().getId(), "Hello World!", true, message.getId(), null);
             requestHandler.sendRequest(telegramRequest);
-        } catch (JsonParsingException | TelegramServerException e) {
+        } catch (TelegramServerException e) {
+            e.printStackTrace();
+        } catch (JsonParsingException e) {
             e.printStackTrace();
         }
     }
