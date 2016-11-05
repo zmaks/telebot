@@ -23,6 +23,7 @@ public class HelloWorldCommand extends AbstractCommand {
             e.printStackTrace();
         } catch (JsonParsingException e) {
             e.printStackTrace();
+
         }
     }
 }
